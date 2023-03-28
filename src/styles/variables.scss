@@ -1,0 +1,38 @@
+@use "sass:math";
+
+:root {
+  // primary colors
+  --Primary-100: 246 80% 60%;
+  --Primary-work: 15 100% 70%;
+  --Primary-play: 195 74% 62%;
+  --Primary-study: 348 100% 68%;
+  --Primary-exercise: 145 58% 55%;
+  --Primary-social: 264 64% 52%;
+  --Primary-self-care: 43 84% 65%;
+
+  // neurtal colors
+
+  --Neutral-100: 226 43% 10%;
+  --Neutral-200: 235 46% 20%;
+  --Neutral-300: 235 45% 61%;
+  --Neutral-400: 236 100% 87%;
+}
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+// mobile first
+// 768  px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "25em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

@@ -1,0 +1,92 @@
+@use "../styles/variables" as *;
+
+.card {
+  padding-top: 2.8rem;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: 95% -12px;
+  // width: 20rem;
+  //
+  &.work {
+    background-image: url(../../images/icon-work.svg);
+    background-color: hsl(var(--Primary-work));
+  }
+
+  &.play {
+    background-image: url(../../images/icon-play.svg);
+    background-color: hsl(var(--Primary-play));
+  }
+  &.study {
+    background-image: url(../../images/icon-study.svg);
+    background-color: hsl(var(--Primary-study));
+  }
+  &.exercise {
+    background-image: url(../../images/icon-exercise.svg);
+    background-color: hsl(var(--Primary-exercise));
+  }
+  &.social {
+    background-image: url(../../images/icon-social.svg);
+    background-color: hsl(var(--Primary-social));
+  }
+  &.self {
+    background-image: url(../../images/icon-self-care.svg);
+    background-color: hsl(var(--Primary-self-care));
+  }
+
+  &__info {
+    background-color: hsl(var(--Neutral-200));
+    border-radius: inherit;
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+
+    height: 100%;
+
+    @include breakpoint(large) {
+    }
+    &--upper {
+      // outline: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .card-title {
+        color: hsl(0, 0%, 100%);
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      .card-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    &--lower {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // outline: 1px solid red;
+
+      @include breakpoint(large) {
+        margin-top: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .card__current-hrs {
+        color: hsl(0, 0%, 100%, 0.8);
+        font-weight: lighter;
+        margin: 0;
+        font-size: 3rem;
+      }
+
+      .card__previous-hrs {
+        color: hsl(0, 0%, 100%, 0.5);
+        font-size: 1rem;
+      }
+    }
+  }
+}
